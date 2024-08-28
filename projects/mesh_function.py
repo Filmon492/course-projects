@@ -2,10 +2,16 @@ import numpy as np
 
 
 def mesh_function(f, t):
-    pass
+    ft= np.zeros_like(t, dtype=float)
+    for i in range(len(t)):
+        ft[i]= f(t[i])
+    return ft
 
 def func(t):
-    pass
+    if 0 <= t <= 3:
+        return np.exp(-t)
+    else:
+        return np.exp(-3*t)
 
 def test_mesh_function():
     t = np.array([1, 2, 3, 4])
